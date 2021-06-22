@@ -210,5 +210,61 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
     ?>
 </div>
 <!-- /snack 5 -->
+<hr>
+<!-- snack 6 -->
+<div>
+    <?php
+ 
+        $db = [
+            'teachers' => [
+                [
+                    'name' => 'Michele',
+                    'lastname' => 'Papagni'
+                ],
+                [
+                    'name' => 'Fabio',
+                    'lastname' => 'Forghieri'
+                ]
+            ],
+            'pm' => [
+                [
+                    'name' => 'Roberto',
+                    'lastname' => 'Marazzini'
+                ],
+                [
+                    'name' => 'Federico',
+                    'lastname' => 'Pellegrini'
+                ]
+            ]
+        ];
+
+
+ 
+    ?>
+    <?php
+        for ($i = 0; $i < count($db['teachers']); $i++) { 
+            $teacher = $db['teachers'][$i];
+            //var_dump($teacher['name']); 
+        ?>
+        <div class='teachers' style='background-color: gray; color: white;'>
+        <h5><?php echo $teacher['name']; ?></h5>
+        <h5><?php echo $teacher['lastname']; ?></h5>
+        </div>
+    <?php } ?>
+
+    <?php
+        for ($w = 0; $w < count($db['pm']); $w++) { 
+            $student = $db['pm'][$w];
+            //var_dump($student);
+        ?>
+        <div class='pm' style='background-color: green; color: white;'>
+        <h5><?php echo $student['name']; ?></h5>
+        <h5><?php echo $student['lastname']; ?></h5>
+        </div>
+
+    <?php } ?>
+
+</div>
+<!-- /snack 6 -->
 </body>
 </html>
