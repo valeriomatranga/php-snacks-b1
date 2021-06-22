@@ -29,6 +29,8 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CDN Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <!-- snack 1 -->
@@ -68,7 +70,7 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
         <h2>Partite squadre Semifinali</h2>
         <?php for ($i = 0; $i < count($squadre); $i++) {
             $squadra = $squadre[$i];
-            ?>
+        ?>
 
         <div>
             <span><?php echo $squadra['casa']?></span>
@@ -84,27 +86,109 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
 <!-- snack 2 -->
 <div>
     <form action="#" method="get">
-    <input type="text" name="name" id="username" placeholder="inserisci il tuo nome">
-    <input type="text" name="email" id="email" placeholder="inserisci la tua mail">
-    <input type="text" name="age" id="age" placeholder="inserisci la tua eta">
-    <button type="submit">clicca</button>
+        <input type="text" name="name" id="username" placeholder="inserisci il tuo nome">
+        <input type="text" name="email" id="email" placeholder="inserisci la tua mail">
+        <input type="text" name="age" id="age" placeholder="inserisci la tua eta">
+        <button type="submit">clicca</button>
     </form>
 
     <?php
-    $name = $_GET['name'];
-    $email = $_GET['email'];
-    $age = $_GET['age'];
-    //var_dump($name,$email,$age);
-        if (cont($name = 3) && strpos($email,'@') && strpos($email,'.') && is_numeric($age)){
+        $name = $_GET['name'];
+        $email = $_GET['email'];
+        $age = $_GET['age'];
+        // var_dump(strlen($name));
+        if (strlen($name) >= 3 && strpos($email,'@') && strpos($email,'.') && ctype_digit($age)){
             $return = 'Accesso Riuscito';
-        }else{
-            $return = 'Accesso Negato';
+        } else {
+            $return = "Accesso negato";
         }
     ?>
 
-    <h2>Verifica:<?php echo $return; ?></h2>
+    <h2>Verifica: <?php echo $return; ?></h2>
 </div>
 <!-- /snack 2 -->
-    
+<hr>
+<!-- snack 3 -->
+<div>
+    <?php
+        $posts = [
+
+            '10/01/2019' => [
+                [
+                    'title' => 'Post 1',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 1'
+                ],
+                [
+                    'title' => 'Post 2',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 2'
+                ],
+            ],
+            '10/02/2019' => [
+                [
+                    'title' => 'Post 3',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 3'
+                ]
+            ],
+            '15/05/2019' => [
+                [
+                    'title' => 'Post 4',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 4'
+                ],
+                [
+                    'title' => 'Post 5',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 5'
+                ],
+                [
+                    'title' => 'Post 6',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 6'
+                ]
+            ],
+        ];
+        //var_dump($posts);
+        $keys = array_keys($posts);
+    ?>
+
+    <div class="d-flex">
+        <?php for ($a = 0; $a < count($keys); $a++) { 
+            $key = $keys[$a];
+        ?>
+
+
+            <?php for ($b = 0; $b < count($key); $b++) { 
+                $post = $posts[$key]; 
+                //var_dump($post);
+
+                for ($c = 0; $c < count($post); $c++) { 
+                $element = $post[$c];
+                //var_dump($element);
+            ?>
+
+            <div>
+                <h2>Data: <?php echo $key; ?></h2>
+                <h4><?php echo $element['title'];?></h4>
+                <p><?php echo $element['author'];?></p>
+                <p><?php echo $element['text'];?></p>
+            </div>
+          
+        <?php
+            } 
+            }
+            }
+        ?>
+    </div>
+</div>
+<!-- /snack 3 -->  
+<hr>  
+<!-- snack 4 -->
+<div>
+
+</div>
+<!-- /snack 4 -->
 </body>
 </html>
