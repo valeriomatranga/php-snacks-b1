@@ -32,52 +32,79 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
 </head>
 <body>
 <!-- snack 1 -->
-<?php
-$squadre = [
-    [
-      "casa" => "Olimpia - ",  
-      "ospite" => "Milano | ",
-      "punt_casa" => "50-",
-      "punt_ospite" => "60",
-    ],
-    [
-      "casa" => "Cosenza - ",  
-      "ospite" => "Reggio | ",
-      "punt_casa" => "30-",
-      "punt_ospite" => "28",
-
-    ],
-    [
-      "casa" => "Palermo - ",  
-      "ospite" => "Catania | ",
-      "punt_casa" => "60-",
-      "punt_ospite" => "10",
-
-    ],
-    [
-      "casa" => "Sassari - ",  
-      "ospite" => "Roma | ",
-      "punt_casa" => "40-",
-      "punt_ospite" => "50",
-
-    ]
-]
-?>
 <div>
-    <h2>Partite squadre Semifinali</h2>
-    <?php for ($i = 0; $i < count($squadre); $i++) {
-        $squadra = $squadre[$i];
+    <?php
+    $squadre = [
+        [
+            "casa" => "Olimpia - ",  
+            "ospite" => "Milano | ",
+            "punt_casa" => "50-",
+            "punt_ospite" => "60",
+        ],
+        [
+            "casa" => "Cosenza - ",  
+            "ospite" => "Reggio | ",
+            "punt_casa" => "30-",
+            "punt_ospite" => "28",
+            
+        ],
+        [
+            "casa" => "Palermo - ",  
+            "ospite" => "Catania | ",
+            "punt_casa" => "60-",
+            "punt_ospite" => "10",
+            
+        ],
+        [
+            "casa" => "Sassari - ",  
+            "ospite" => "Roma | ",
+            "punt_casa" => "40-",
+            "punt_ospite" => "50",
+            
+            ]
+            ]
+            ?>
+    <div>
+        <h2>Partite squadre Semifinali</h2>
+        <?php for ($i = 0; $i < count($squadre); $i++) {
+            $squadra = $squadre[$i];
+            ?>
+
+        <div>
+            <span><?php echo $squadra['casa']?></span>
+            <span><?php echo $squadra['ospite']?></span>
+            <span><?php echo $squadra['punt_casa']?></span>
+            <span><?php echo $squadra['punt_ospite']?></span>
+            <?php } ?>
+        </div> 
+    </div>
+</div>
+<!-- /snack 1 -->
+<hr>
+<!-- snack 2 -->
+<div>
+    <form action="#" method="get">
+    <input type="text" name="name" id="username" placeholder="inserisci il tuo nome">
+    <input type="text" name="email" id="email" placeholder="inserisci la tua mail">
+    <input type="text" name="age" id="age" placeholder="inserisci la tua eta">
+    <button type="submit">clicca</button>
+    </form>
+
+    <?php
+    $name = $_GET['name'];
+    $email = $_GET['email'];
+    $age = $_GET['age'];
+    //var_dump($name,$email,$age);
+        if (cont($name = 3) && strpos($email,'@') && strpos($email,'.') && is_numeric($age)){
+            $return = 'Accesso Riuscito';
+        }else{
+            $return = 'Accesso Negato';
+        }
     ?>
 
-    <div>
-        <span><?php echo $squadra['casa']?></span>
-        <span><?php echo $squadra['ospite']?></span>
-        <span><?php echo $squadra['punt_casa']?></span>
-        <span><?php echo $squadra['punt_ospite']?></span>
-        <?php } ?>
-    </div>
-    
+    <h2>Verifica:<?php echo $return; ?></h2>
 </div>
+<!-- /snack 2 -->
     
 </body>
 </html>
