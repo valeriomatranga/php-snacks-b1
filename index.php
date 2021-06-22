@@ -187,8 +187,19 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
 <hr>  
 <!-- snack 4 -->
 <div>
+    <?php
+    $random_number = [];
 
+    for ($i = 0; $i < 16 ; $i++) { 
+        $number = rand(1, 100);
+        if (!in_array($number, $random_number)){
+            array_push($random_number, $number);
+        }
+    }
+    var_dump($random_number);
+    ?>
 </div>
 <!-- /snack 4 -->
+<hr>
 </body>
 </html>
