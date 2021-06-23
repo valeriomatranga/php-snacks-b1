@@ -38,34 +38,34 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
     <?php
     $squadre = [
         [
-            "casa" => "Olimpia - ",  
-            "ospite" => "Milano | ",
-            "punt_casa" => "50-",
+            "casa" => "Olimpia",  
+            "ospite" => "Milano",
+            "punt_casa" => "50",
             "punt_ospite" => "60",
         ],
         [
-            "casa" => "Cosenza - ",  
-            "ospite" => "Reggio | ",
-            "punt_casa" => "30-",
+            "casa" => "Cosenza",  
+            "ospite" => "Reggio",
+            "punt_casa" => "30",
             "punt_ospite" => "28",
             
         ],
         [
-            "casa" => "Palermo - ",  
-            "ospite" => "Catania | ",
-            "punt_casa" => "60-",
+            "casa" => "Palermo",  
+            "ospite" => "Catania",
+            "punt_casa" => "60",
             "punt_ospite" => "10",
             
         ],
         [
-            "casa" => "Sassari - ",  
-            "ospite" => "Roma | ",
-            "punt_casa" => "40-",
+            "casa" => "Sassari",  
+            "ospite" => "Roma",
+            "punt_casa" => "40",
             "punt_ospite" => "50",
             
             ]
-            ]
-            ?>
+        ];
+        ?>
     <div>
         <h2>Partite squadre Semifinali</h2>
         <?php for ($i = 0; $i < count($squadre); $i++) {
@@ -73,9 +73,9 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
         ?>
 
         <div>
-            <span><?php echo $squadra['casa']?></span>
-            <span><?php echo $squadra['ospite']?></span>
-            <span><?php echo $squadra['punt_casa']?></span>
+            <span><?php echo $squadra['casa']?> - </span>
+            <span><?php echo $squadra['ospite']?> | </span>
+            <span><?php echo $squadra['punt_casa']?>-</span>
             <span><?php echo $squadra['punt_ospite']?></span>
             <?php } ?>
         </div> 
@@ -190,7 +190,7 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
     <?php
     $random_number = [];
 
-    for ($i = 0; $i < 16 ; $i++) { 
+    while ( $random_number < 15 ) { 
         $number = rand(1, 100);
         if (!in_array($number, $random_number)){
             array_push($random_number, $number);
@@ -266,5 +266,11 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
 
 </div>
 <!-- /snack 6 -->
+<hr>
+<!-- snack 7 -->
+<div>
+
+</div>
+<!-- /snack 7 -->
 </body>
 </html>
