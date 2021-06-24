@@ -49,6 +49,8 @@ $ads = [
 <body>
 
 <?php
+
+    $active= [];
     foreach ($ads as $key => $value) {
         # code...
         //var_dump($key);
@@ -57,14 +59,17 @@ $ads = [
     
         if ($value['is_active'] === true ) {
             # code...
+            array_push($active, $value);
             $return = $value['image_path'];
-            var_dump($return);
+            //var_dump($return);
 
         }
     }
+    var_dump($active);
+    
    ?> 
     <div>
-        <img src='<?php echo $return ?>' alt="">
+        <img src='<?php echo $return; ?>' alt="">
     </div>
     
 </body>

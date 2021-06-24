@@ -190,7 +190,7 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
     <?php
     $random_number = [];
 
-    while ( $random_number < 15 ) { 
+    while (count($random_number) < 15) { 
         $number = rand(1, 100);
         if (!in_array($number, $random_number)){
             array_push($random_number, $number);
@@ -206,8 +206,12 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
     <?php
     $testo = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla nisi nostrum dolorem, mollitia iusto sed, iure maxime, dolor dicta fuga vel! Perferendis explicabo quia quod voluptas sed nihil natus omnis, cumque corporis dolor voluptatum est repudiandae? Molestiae officiis veritatis fugiat facilis eum cupiditate deleniti amet ipsa porro impedit, omnis illum at ipsam rem, ipsum odit dignissimos delectus facere aliquid? Quasi quidem quaerat harum tempore dolores doloribus unde velit magnam, ipsam officiis sequi, aliquid iste, quisquam laboriosam. Magnam dolorum exercitationem quis quaerat in, quos nam nisi itaque. Quaerat, ex at nobis, nihil error vero exercitationem neque facilis totam animi nesciunt ad, possimus commodi! Odio perferendis veniam itaque eveniet dolorum amet, aspernatur mollitia numquam voluptatem id labore quidem sapiente, eum facilis necessitatibus placeat qui cumque quis nesciunt veritatis delectus autem? Eos laborum, animi iure tempora labore distinctio eum? Dolorem maiores, placeat excepturi soluta harum praesentium distinctio ea nam facere quis atque eum assumenda laborum quia consequatur voluptas ab debitis nihil dolore impedit a quas ipsum sed cum. Amet veritatis suscipit sit aspernatur vel? Earum iusto molestiae magnam laboriosam accusantium deserunt quos doloribus numquam illo ullam nesciunt beatae itaque possimus eos cumque quisquam rerum doloremque alias aut facilis et eaque, neque sunt inventore. Fuga, in. Vero iste nihil excepturi harum quae accusamus assumenda dolorem enim neque dicta modi vel quod aliquam, architecto corporis earum a facere provident. Exercitationem cupiditate libero, error, aspernatur ab quisquam aperiam corporis voluptatum labore ipsa sit quam incidunt eaque dolore et deserunt quibusdam temporibus ducimus facere tempora? Vero vel fugiat provident magnam repudiandae inventore. Provident eos ipsam quaerat doloremque sint, doloribus maxime delectus eligendi praesentium voluptates mollitia in voluptatem, veniam repellat rerum a voluptate, excepturi fugit asperiores. Eligendi sunt aliquid, ratione placeat aspernatur suscipit error temporibus. Consequuntur qui odit aliquam hic quaerat explicabo quam rerum? Nam quasi officia vitae ducimus ipsum dignissimos architecto obcaecati iure inventore similique perferendis voluptatum voluptatibus laboriosam expedita beatae, impedit repellendus illum accusamus unde quidem vero doloribus repudiandae sint. Ea at sapiente tenetur fuga voluptate cumque eius inventore aperiam dignissimos nam minus praesentium facilis magnam est, totam aspernatur natus fugit quaerat perspiciatis quae voluptatum quod sit! Perferendis rerum laudantium adipisci ab, doloremque dignissimos animi consectetur tempora aliquam. Excepturi velit dolore modi perferendis eius laborum, nam, autem architecto magnam nemo illum voluptates blanditiis minus unde sunt consequuntur odit, obcaecati nihil aliquid exercitationem tempora perspiciatis. Enim nobis laudantium iste aspernatur ipsam rem ex at, modi suscipit facilis aut omnis cum, sit maiores ullam quam! Numquam facilis ratione aliquam suscipit, possimus autem ad quos nemo in vitae quisquam non modi tempore? Repudiandae qui, non vitae doloremque quaerat eum commodi rerum dolore animi officia ipsum adipisci? Sunt voluptatibus ad voluptates officiis? Veniam, pariatur et tenetur doloremque consequuntur nam quis, odio qui non voluptates rerum necessitatibus saepe quidem eligendi quasi totam quisquam sit facilis magni iusto repellat corrupti voluptatum! Cum quaerat perferendis corrupti magnam corporis error expedita laborum beatae aperiam magni ducimus libero dolore quo aliquid rem similique odit, temporibus excepturi. Quasi natus repellendus eum, amet tempora delectus nulla quod.";
     $paragrafi = explode('.', $testo);
-    var_dump($paragrafi);
+    //var_dump($paragrafi);
     ?>
+    <?php
+    for ($m = 0; $m < count($paragrafi); $m++) {?> 
+        <p><?php echo $paragrafi[$m] ?></p>
+    <?php } ?>
 </div>
 <!-- /snack 5 -->
 <hr>
